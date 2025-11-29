@@ -10,19 +10,19 @@
 - id_bar (PK)
 - nom
 - adresse
-- quartier_id (FK vers Quartier)
+- id_quartier (FK vers Quartier)
 
 ### Bière
-- id_biere (PK)
+- id_prix
 - nom
 - type
 - degre
 
 ### Prix
 - id_prix (PK)
-- bar_id (FK vers Bar)
-- biere_id (FK vers Bière)
+- id_bar (FK vers Bar)
 - prix
+
 
 ## 2. Relations
 
@@ -35,6 +35,6 @@
 erDiagram
     QUARTIER ||--o{ BAR : contient
     BAR ||--o{ PRIX : propose
-    BIERE ||--o{ PRIX : concerne
+    PRIX ||--o{ BIERE: concerne   
 ```
 
