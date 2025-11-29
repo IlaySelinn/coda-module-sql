@@ -1,43 +1,40 @@
- Projet complet — Carte des bars à Dijon
+# MCD — Carte des bars à Dijon
 
-# Description fonctionnelle — Projet « Carte des bars à Dijon »
+## 1. Entités et attributs
 
-## 1. Introduction
-Ce projet permet de gérer les bars, bières, prix et quartiers à Dijon pour analyser les ventes, prix et disponibilités.
+### Quartier
+- id_quartier (PK)
+- nom
 
-## 2. Entités principales
 ### Bar
-- id_bar (clé primaire)
+- id_bar (PK)
 - nom
 - adresse
 - quartier_id (FK vers Quartier)
-- Règles : Un bar est dans un seul quartier, mais vend plusieurs bières.
 
 ### Bière
-- id_biere (clé primaire)
+- id_biere (PK)
 - nom
-- type (IPA, Blonde, Blanche, etc.)
+- type
 - degre
-- Règles : Chaque bière peut être vendue dans plusieurs bars.
-
-### Quartier
-- id_quartier (clé primaire)
-- nom
-- Règles : Chaque quartier contient plusieurs bars.
 
 ### Prix
-- id_prix (clé primaire)
+- id_prix (PK)
 - bar_id (FK vers Bar)
 - biere_id (FK vers Bière)
 - prix
-- Règles : Chaque prix lie une bière et un bar spécifique.
 
-## 3. Relations fonctionnelles
-- Bar → Quartier : 1:N
-- Bar ↔ Bière : N:M via Prix
-- Prix : lie bar et bière avec prix spécifique
+## 2. Relations
 
-## 4. Exemples d’utilisation
-- Afficher les bières par quartier
-- Trouver l’IPA la moins chère
-- Calculer le prix moyen par quartier
+- **Quartier → Bar** : 1 quartier contient plusieurs bars (1:N)
+- **Bar → Prix → Bière** : un bar propose plusieurs bières et une bière peut être vendue dans plusieurs bars (N:M) via Prix
+
+## 3. Diagramme Mermaid
+
+```mermaid
+erDiagram
+    QUARTIER ||--o{ BAR : contient
+    BAR ||--o{ PRIX : propose
+    BIERE ||--o{ PRIX : concerne
+```
+
