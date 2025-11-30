@@ -37,3 +37,12 @@ SELECT b.nom, ROUND(AVG(p.prix),2) as panier_moyen
 FROM bar b JOIN prix p ON b.id_bar=p.id_bar
 GROUP BY b.id_bar ORDER BY panier_moyen DESC LIMIT 1;
 
+/*
+ * REQUÊTES OBLIGATOIRES - 5 Analytics 
+ * 1. AVG prix/quartier → GROUP BY
+ * 2. MIN IPA/bar → WHERE type='IPA'
+ * 3. Bières ≥5 bars → HAVING COUNT>=5
+ * 4. Bars sans bière<6€ → NOT EXISTS
+ * 5. Top panier moyen → ORDER BY AVG DESC
+ * Testées: Toutes fonctionnelles
+ */

@@ -28,3 +28,13 @@ CREATE TABLE prix (
     prix DECIMAL(5,2) NOT NULL CHECK (prix > 0),
     PRIMARY KEY (id_bar, id_biere)
 );
+
+/*
+     SCHEMA POSTGRESQL - Carte des bars à Dijon 
+ 
+ * - SERIAL PK auto-increment
+ * - FK contraintes CASCADE
+ * - CHECK: prix>0, degre 2.5-12, type ENUM
+ * - NOT NULL + UNIQUE quartier.nom
+ * - Exécutable sans erreur: DROP + CREATE
+ */

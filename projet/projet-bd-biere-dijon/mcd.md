@@ -37,8 +37,9 @@ QUARTIER ||--o{ BAR : "contient"
 BAR }o--o{ PRIX : "propose"
 BIERE }o--o{ PRIX : "vendue_dans"
 
-
---MCD MERISE standard: 4 entités, relations 1:N + N:M--
+/*
+--MCD standard: 4 entités, relations 1:N + N:M--
 --Cardinalités: Quartier(1,N)Bar, Bar(N,M)Bière via Prix(association)--
 --Diagramme Mermaid ERD lisible/professionnel--
 --Dépendances fonctionnelles  complètes--
+*/
