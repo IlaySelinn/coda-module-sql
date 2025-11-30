@@ -95,13 +95,3 @@ INSERT INTO prix (id_bar, id_biere, prix) VALUES
 (18,3,6.90),(18,4,7.70),(18,5,6.10),(18,15,7.30),(18,16,6.70),
 (19,7,4.50),(19,8,5.20),(19,9,4.80),(19,10,4.70),(19,11,5.00),
 (20,12,5.30),(20,13,6.90),(20,17,7.20),(20,18,6.10),(20,19,6.50);
-
-
-/*
- *   SEED DONNÉES - 10Q + 20B + 24Bi + 152P (3/3 points)
- * - Quartiers: 10 réels Dijon (Centre-ville → Université)
- * - Bars: 20 répartis logiquement par quartier
- * - Bières: 24 craft + populaires (IPA/Stout/Pilsner)
- * - Prix: 152 relations réalistes (4-9€)
- * - Contraintes: 100% respectées, 0 erreur
- */

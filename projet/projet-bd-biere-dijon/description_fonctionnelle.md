@@ -24,10 +24,3 @@ Gérer la carte interactive des bars dijonnais avec leurs bières disponibles et
 - Top bars par panier moyen
 - Statistiques bières populaires 
 
-/*
-    DESCRIPTION FONCTIONNELLE - Carte des bars à Dijon
-    Objectif: Gérer carte interactive bars + bières + prix
-    Entités: Quartier(1,N)Bar, Bar(N,M)Bière via Prix
-    Règles: Prix unique/bar-bière, degre 2.5-12%, prix >0€
-    Points: 3/3 - Complet et cohérent
- */
