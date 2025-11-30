@@ -11,3 +11,9 @@
 ## 3. Check-list MCD
 - Vérifier PK, FK, cardinalités, verbes, cohérence avec schema SQL
 - Assure homogénéité et qualité des livrables
+
+### 4.Utilisation "Mermaid" 
+- 
+
+#### 5. 
+-

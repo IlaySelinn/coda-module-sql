@@ -1,40 +1,26 @@
-# MCD — Carte des bars à Dijon
+# Description Fonctionnelle - Carte des bars à Dijon
 
-## 1. Entités et attributs
+##  Objectif du système
+Gérer la carte interactive des bars dijonnais avec leurs bières disponibles et prix pratiqués.
 
-### Quartier
-- id_quartier (PK)
-- nom
+##  Entités principales
 
-### Bar
-- id_bar (PK)
-- nom
-- adresse
-- id_quartier (FK vers Quartier)
+- **Quartier** : Division géographique de Dijon (ex: Centre-ville, Toison d'Or)
+- **Bar** : Établissement servant des bières (nom, adresse précise)
+- **Bière** : Produit vendu (nom, type: IPA/Pils/Blonde, degrés alcool)
+- **Prix** : Tarif d'une bière dans un bar spécifique
 
-### Bière
-- id_prix
-- nom
-- type
-- degre
+##  Relations & Règles métier
 
-### Prix
-- id_prix (PK)
-- id_bar (FK vers Bar)
-- prix
+- **1 quartier → N bars** : Un bar appartient à un seul quartier
+- **1 bar → N prix** : Un bar propose plusieurs bières
+- **1 bière → N prix** : Une bière vendue dans plusieurs bars
+- **Prix unique par (bar, bière)** : Évite doublons
+- **Contraintes** : Prix > 0€, degrés entre 2.5% et 12%
 
-
-## 2. Relations
-
-- **Quartier → Bar** : 1 quartier contient plusieurs bars (1:N)
-- **Bar → Prix → Bière** : un bar propose plusieurs bières et une bière peut être vendue dans plusieurs bars (N:M) via Prix
-
-## 3. Diagramme Mermaid
-
-```mermaid
-erDiagram
-    QUARTIER ||--o{ BAR : contient
-    BAR ||--o{ PRIX : propose
-    PRIX ||--o{ BIERE: concerne   
-```
+## Fonctionnalités attendues
+- Recherche bars par quartier
+- Comparaison prix bières par quartier
+- Top bars par panier moyen
+- Statistiques bières populaires 
 
